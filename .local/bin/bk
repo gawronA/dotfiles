@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+BK_TEMP_DIR="$XDG_CACHE_HOME/bk"
+
+if [[ ! -d $BK_TEMP_DIR ]]; then
+    mkdir $BK_TEMP_DIR
+fi
+
+cp $1 "$BK_TEMP_DIR/$1"
+mv --backup=numbered "$BK_TEMP_DIR/$1" $1

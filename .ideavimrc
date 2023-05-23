@@ -1,0 +1,84 @@
+" SET options
+set clipboard=unnamedplus
+" set clipboard+=ideaput
+set surround
+" set which-key
+
+" set leader to space
+let mapleader = " "
+nnoremap <SPACE> <NOP>
+
+" insert mode mappings
+" -- 'jk' for quitting insert mode
+inoremap jk <ESC>
+" -- 'kj' for quitting insert mode
+" inoremap kj <ESC> " annoying
+" -- 'jj' for quitting insert mode
+inoremap jj <ESC>
+
+" -- Move current line / block with Alt-j/k ala vscode.
+inoremap <A-j> :action MoveLineDown<CR>
+inoremap <A-k> :action MoveLineUp<CR>
+
+" normal mode mappings
+# -- Move current line / block with Alt-j/k a la vscode.
+nnoremap <A-j> :action MoveLineDown<CR>
+nnoremap <A-k> :action MoveLineUp<CR>
+
+" visual mode mappings 
+" -- Better indenting
+vnoremap < <gv
+vnoremap > >gv
+
+" visual block mappings
+" -- Move selected line / block of text in visual mode
+xnoremap J :action MoveLineDown<CR>
+xnoremap K :action MoveLineUp<CR>
+xnoremap <A-j> :action MoveLineDown<CR>
+xnoremap <A-k> :action MoveLineUp<CR>
+
+" switch tabs
+nnoremap H :action PreviousTab<CR>
+nnoremap L :action NextTab<CR>
+
+" split vertically
+nnoremap <C-x> :action SplitVertically<CR>
+
+" Navigate windows
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+
+" close tab
+nnoremap <leader>q :q<CR>
+
+" p/y paste/copy PRIMARY (select), P/Y paste/copy SECONDARY (Ctrl+C)
+noremap y "+y
+noremap p "+p
+noremap Y "+Y
+noremap P "+P
+
+" prevent overriding clipboard on deletions
+nnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
+nnoremap s "_s
+vnoremap x "_x
+vnoremap d "_d
+vnoremap D "_D
+vnoremap c "_c
+vnoremap s "_s
+vnoremap p "+pgv"+y`>
+vnoremap P "+Pgv"+y`>
+xnoremap p "+pgv"+y`> 
+xnoremap P "+Pgv"+y`>
+
+" traditional 'cut' with leader d
+nnoremap <leader>D "+D
+vnoremap <leader>d "+d
+nnoremap <leader>d "+d
+
+
+" shift + j/k move 10 lines down/up
+" noremap <S-j> 10j
+" noremap <S-k> 10k
+
