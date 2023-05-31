@@ -1,5 +1,5 @@
 #!/bin/sh
- 
+
 ### EXPORT ###
 export TERM="xterm-256color"                      # getting proper colors
 export EDITOR="vim"			          # $EDITOR use vim in terminal
@@ -14,6 +14,10 @@ export XDG_STATE_HOME=$HOME/.local/state
 # Config dir
 export ZDOTDIR=$HOME/.config/zsh
 
+# Default FZF command using rg
+# sudo apt install ripgrep
+export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob \"!{.git,node_modules}/**\""
+
 
 
 ### SET VI MODE ###
@@ -27,15 +31,13 @@ bindkey  "^[[H"   beginning-of-line		# Goto begginning of line with HOME
 bindkey  "^[[F"   end-of-line			# Goto end of line with END
 bindkey  "^[[3~"  delete-char			# Delete char with DELETE
 
- 
+
 
 ### PATH ###
-# Home .bin
 if [ -d "$HOME/.bin" ] ;
    then PATH="$HOME/.bin:$PATH"
 fi
 
-# Home .local/bin
 if [ -d "$HOME/.local/bin" ] ;
    then PATH="$HOME/.local/bin:$PATH"
 fi
@@ -91,9 +93,9 @@ alias ls='ls --color=auto --classify'
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
-   
-# easier to read disk 
-alias df='df -h'     # human-readable sizes 
+
+# easier to read disk
+alias df='df -h'     # human-readable sizes
 alias free='free -m' # show sizes in MB
 
 # dotfiles repository

@@ -118,7 +118,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'folke/which-key.nvim'
-Plug 'lewis6991/gitsigns.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'jiangmiao/auto-pairs'
@@ -221,7 +220,6 @@ xmap        S   <Plug>(vsnip-cut-text)
 
 lua << EOF
   require("which-key").setup()
-  require("gitsigns").setup()
   require("nvim-lsp-installer").setup()
   require("telescope").setup()
   require("Comment").setup()
