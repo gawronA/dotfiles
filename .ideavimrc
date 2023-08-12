@@ -82,3 +82,4 @@ nnoremap <leader>d "+d
 " noremap <S-j> 10j
 " noremap <S-k> 10k
 
+set ideajoin
